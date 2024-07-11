@@ -4,8 +4,9 @@
 schema:
   schema_id: double_pinyin_flypy
   name: 小鶴雙拼
-  version: "0.18"
+  version: "0.18.1"
   author:
+    - personal habits by Travon <zhouyanbai@qq.com>
     - double pinyin layout by 鶴
     - Rime schema by 佛振 <chen.sst@gmail.com>
   description: |
@@ -21,6 +22,7 @@ switches:
     states: [ 半角, 全角 ]
   - name: simplification
     states: [ 漢字, 汉字 ]
+    reset: 1
   - name: ascii_punct
     states: [ 。，, ．， ]
 
@@ -105,7 +107,7 @@ translator:
     - xform/(\w)j/$1an/
     - xform/([gkhvuirzcs])k/$1uai/
     - xform/(\w)k/$1ing/
-    - xform/([jqxnl])l/$1iang/
+    - xform/([jqxnlb])l/$1iang/
     - xform/(\w)l/$1uang/
     - xform/(\w)z/$1ou/
     - xform/([gkhvuirzcs])x/$1ua/
@@ -137,6 +139,8 @@ punctuator:
 
 key_binder:
   import_preset: default
+  bindings:
+    - {accept: "Control+period", toggle: ascii_punct, when: always}
 
 recognizer:
   import_preset: default
