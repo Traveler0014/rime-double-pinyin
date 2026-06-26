@@ -43,7 +43,6 @@ engine:
     - punct_segmentor
     - fallback_segmentor
   translators:
-    - lua_translator@*calculator    # 计算器
     - punct_translator
     - reverse_lookup_translator
     - script_translator
@@ -147,8 +146,3 @@ recognizer:
   import_preset: default
   patterns:
     reverse_lookup: "`[a-z]*'?$"
-    math_calculator: "^[Vv][-+*/^!.0-9a-zA-Z<>&|~%()]*"
-
-# 计算器触发关键字
-calculator:
-  trigger: V
